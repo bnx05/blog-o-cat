@@ -1,0 +1,18 @@
+<html>
+    <head>
+        <title>Blog-o-cat</title>
+    </head>
+    <body>
+        <div>
+            <h2><a href="/">Blog-o-cat: stories from a cat who hunts for bugs</a></h1>
+        </div>
+
+        {% for post in posts %}
+            <div>
+                <p>published: {{ post.published_date }}</p>
+                <h4><a href="">{{ post.title }}</a></h1>
+                <p>{{ post.text|linebreaksbr }}</p>
+            </div>
+        {% endfor %}
+    </body>
+</html>
