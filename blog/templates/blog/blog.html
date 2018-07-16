@@ -1,0 +1,42 @@
+{% extends 'blog/index.html' %}
+{% load staticfiles %}
+
+{% block header %}
+    <header class="masthead" style="background-image: url('{% static 'img/japan_food.jpg' %}')">
+      <div class="overlay"></div>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            <div class="site-heading">
+              <h2>Thought dump: beware the content</h2>
+              <span class="subheading">I write whatever, whenever I can.</span>
+              <span class="subheading">Which means the content may be all over the place.</span>
+              <span class="subheading">One day I'll group them accordingly.</span>
+              <span class="subheading">Until then, happy reading!</span>
+            </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+{% endblock %}
+
+{% block content %}
+    <div class="content container">
+      <div class="row">
+        {% for post in posts %}
+          <div class="post-preview">
+            <a href="{% url 'post_detail' pk=post.pk %}">
+              <h2 class="post-title">
+                {{ post.title }}
+              </h2>
+            </a>
+            <p class="post-meta">
+              {{ post.summary }} <br>
+              Posted by <a href="about">{{ post.author }}</a> on {{ post.published_date }}
+            </p>
+          </div>
+        {% endfor %}
+      </div>
+    </div>
+{% endblock %}
