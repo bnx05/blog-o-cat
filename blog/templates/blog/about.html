@@ -1,1 +1,21 @@
 {% extends 'blog/index.html' %}
+{% load staticfiles %}
+
+{% block header %}
+<header class="masthead" style="background-image: url('{% static 'img/japan_food.jpg' %}')">
+  <div class="overlay"></div>
+  <div class="container">
+    <div class="row">
+      <div class="col-lg-8 col-md-10 mx-auto">
+        <div class="site-heading">
+        	<h3>My name is Banx</h3>
+        	<h3>Software tester and a cat</h3>
+        	<h3>I hiss and I scratch</h3>
+        	<p>Please forgive my attempt at haiku</p>
+        </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+{% endblock %}
