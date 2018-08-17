@@ -454,3 +454,8 @@ footer.copyright {
   font - size: 16 px;
   padding: 25 px 35 px
 }
+
+mark {
+    background-color: yellow;
+    color: black;
+}
