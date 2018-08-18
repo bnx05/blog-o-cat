@@ -1,6 +1,7 @@
 from django.db import models
 from django.template.defaultfilters import slugify
 from django.utils import timezone
+from tinymce.models import HTMLField
 
 
 class Post(models.Model):
@@ -8,7 +9,7 @@ class Post(models.Model):
     title = models.CharField(max_length=100)
     summary = models.CharField(max_length=100)
     slug = models.SlugField(unique=True)
-    text = models.TextField()
+    text = HTMLField()
     created_date = models.DateTimeField(
         default=timezone.now)
     published_date = models.DateTimeField(
