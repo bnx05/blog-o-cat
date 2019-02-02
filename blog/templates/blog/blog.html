@@ -33,8 +33,12 @@
             </h2>
           </a>
           <p class="post-meta">
-            {{ post.summary }} <br>
+            {{ post.summary }}
+            <br>
             Posted by <a href="about">{{ post.author }}</a> on {{ post.published_date }}
+            {% if user.is_superuser %}
+              <a href="{% url 'post_edit' post.slug %}">Edit</a>
+            {% endif %}
           </p>
         </div>
       {% endfor %}
